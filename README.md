@@ -1,6 +1,6 @@
 # Student Test Score Information Management
 
-### description
+### Description
 **My piece of work from C++ assignment.** Hope you like it.
 
 ### Main Data
