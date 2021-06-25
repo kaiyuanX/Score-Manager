@@ -1,0 +1,29 @@
+ name:Cpp
+  num:2000
+ time:32
+score:3
+
+ name:calculus
+  num:2001
+ time:64
+score:4
+
+ name:lisan_math
+  num:2002
+ time:64
+score:3
+
+ name:english
+  num:2003
+ time:24
+score:2
+
+ name:Marx
+  num:2004
+ time:32
+score:2
+
+ name:modern_history
+  num:2005
+ time:32
+score:2

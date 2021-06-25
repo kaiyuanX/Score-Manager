@@ -1,0 +1,30 @@
+     name :kaiyuan
+   number :2000170092
+   gender :1
+    birth :2001-09-04
+institute :cs
+    major :cs
+    grade :freshman
+    class :02
+ subjects :2000 2002 
+
+     name :kaiyuan2
+   number :2000170093
+   gender :1
+    birth :2001-09-04
+institute :cs
+    major :cs
+    grade :freshman
+    class :02
+ subjects :2001 2002 2003 
+
+     name :ysh
+   number :2000170094
+   gender :0
+    birth :2001-02-02
+institute :cs
+    major :cs
+    grade :freshman
+    class :02
+ subjects :2003 2005 
+
