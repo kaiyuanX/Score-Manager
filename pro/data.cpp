@@ -11,7 +11,7 @@ void Subread(sub *suball)
     string temp[4];
     char ch = fp.get();
 
-    for (int i = 0; ch != EOF; ch = fp.get(), i++)
+    for (int i = 0; i < num_of_sub; i++)
     {
         while (ch != ':')
         {
@@ -39,11 +39,11 @@ void Subread(sub *suball)
             ch = fp.get();
         }
         getline(fp, temp[3]);
-        ch = fp.get();
+        ch = fp.get();//ch=='\n'
 
         suball[i].assignsub(temp);
 
-        /* 将文件末的两个'\n'读取 */
+        /* 之后ch指向 eof 或 下一项的某个字符 */
         ch = fp.get();
         ch = fp.get();
     }
