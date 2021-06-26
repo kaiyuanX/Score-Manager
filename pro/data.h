@@ -9,7 +9,7 @@ using std::ifstream;
 using std::ofstream;
 using std::string;
 
-#define num_of_sub 6
+#define num_of_sub 7
 
 /* 课程信息 */
 class sub

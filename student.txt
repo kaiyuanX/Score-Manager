@@ -28,3 +28,13 @@ institute :cs
     class :02
  subjects :2003 2005 
 
+     name :testPE
+   number :2000170000
+   gender :1
+    birth :2020-06-06
+institute :cs
+    major :cs
+    grade :freshman
+    class :02
+ subjects :2006 
+
