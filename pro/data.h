@@ -9,6 +9,9 @@ using std::ifstream;
 using std::ofstream;
 using std::string;
 
+#ifndef DATA_H
+#define DATA_H
+
 #define num_of_sub 7
 
 /* 课程信息 */
@@ -193,7 +196,9 @@ public:
         cin >> grade;
         cout << "Please put class of the student." << endl;
         cin >> clas;
-
+        
+        system("cls");
+        
         /* 输入课程 */
         cout << "These are subjects you can choose below." << endl;
         for (int i = 0; i < num_of_sub; i++)
@@ -259,16 +264,23 @@ stunode InsertAtEnd_student(stunode head);
 /* 输出 suball[] */
 void Print_suball(sub *sublist_);
 
-/* 输出 链表stunode 所含信息 */
-void Print_stuall(stunode head);
+/* 从 string学科编号 找到对应的 string学科名称 */
+string Find_Subnum_From_Sunname(string subsubnum);
+
+/* 输出 链表 stunode 所含信息 */
+void Print_Onestudent(stunode head);
+void Print_stuall_Name_Num(stunode head);
 void Print_stuall_Only_Num(stunode head);
 
 /* 输出 链表 subnode 所含信息 */
 void Print_stu_of_sub(subnode head);
 
-/* 从 链表stunode 中找到对应 num 的节点 */
+/* 从 链表 stunode 中找到对应 num 的节点 */
 /* 返回该节点的地址 */
 stunode Find_from_Num_of_Student(stunode head, string num_to_be_find);
 
 /* 把 head 中的全部信息保存在 student.txt 中 */
+/* 函数调用一次保存一个节点 */
 void Save_Student_information(stunode head);
+
+#endif

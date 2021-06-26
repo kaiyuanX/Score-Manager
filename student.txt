@@ -1,40 +1,60 @@
-     name :kaiyuan
-   number :2000170092
+     name :xky
+   number :2000170001
    gender :1
     birth :2001-09-04
 institute :cs
     major :cs
-    grade :freshman
+    grade :freashman
     class :02
- subjects :2000 2002 
+ subjects :2000 2002 2003 
 
-     name :kaiyuan2
-   number :2000170093
-   gender :1
-    birth :2001-09-04
+     name :hkw
+   number :2000170002
+   gender :0
+    birth :2002-02-02
 institute :cs
     major :cs
-    grade :freshman
+    grade :freashman
     class :02
- subjects :2001 2002 2003 
+ subjects :2005 2006 
 
      name :ysh
-   number :2000170094
+   number :2000170003
    gender :0
-    birth :2001-02-02
+    birth :2001-02-03
 institute :cs
     major :cs
-    grade :freshman
+    grade :freashman
     class :02
- subjects :2003 2005 
+ subjects :2005 
 
-     name :testPE
-   number :2000170000
+     name :zzw
+   number :2000170004
+   gender :0
+    birth :2001-01-09
+institute :cs
+    major :cs
+    grade :freashman
+    class :02
+ subjects :2003 2006 
+
+     name :ply
+   number :2000170087
    gender :1
-    birth :2020-06-06
+    birth :2003-01-02
 institute :cs
     major :cs
     grade :freshman
     class :02
- subjects :2006 
+ subjects :2001 
+
+     name :xn
+   number :2000170099
+   gender :1
+    birth :2001-08-12
+institute :cs
+    major :cs
+    grade :freshman
+    class :02
+ subjects :2001 
 

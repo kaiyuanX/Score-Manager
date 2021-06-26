@@ -39,7 +39,7 @@ void Subread(sub *suball)
             ch = fp.get();
         }
         getline(fp, temp[3]);
-        ch = fp.get();//ch=='\n'
+        ch = fp.get(); //ch=='\n'
 
         suball[i].assignsub(temp);
 
@@ -227,23 +227,43 @@ void Print_suball(sub *sublist_)
     }
 }
 
-void Print_stuall(stunode head)
+string Find_Subnum_From_Sunname(string subsubnum)
+{
+    for (int i = 0; i < num_of_sub; i++)
+    {
+        if (suball[i].getnum() == subsubnum)
+        {
+            return suball[i].getname();
+        }
+    }
+    return "No_Such_Subnum";
+}
+
+void Print_Onestudent(stunode head)
+{
+    cout << "     name : " << (head->stu).getname() << endl;
+    cout << "   number : " << (head->stu).getnum() << endl;
+    cout << "   gender : " << (head->stu).getgender() << " ( 0:girl , 1:boy )" << endl;
+    cout << "    birth : " << (head->stu).getyear() << "-" << (head->stu).getmonth() << "-" << (head->stu).getday() << endl;
+    cout << "institute : " << (head->stu).getinstitute() << endl;
+    cout << "    major : " << (head->stu).getmajor() << endl;
+    cout << "    grade : " << (head->stu).getgrade() << endl;
+    cout << "    class : " << (head->stu).getclas() << endl;
+    cout << endl;
+}
+
+void Print_stuall_Name_Num(stunode head)
 {
     stunode p = head;
     while (p->next != NULL)
     {
-        cout << "     name : " << ((p->next)->stu).getname() << endl;
-        cout << "   number : " << ((p->next)->stu).getnum() << endl;
-        cout << "   gender : " << ((p->next)->stu).getgender() << " ( 0:girl , 1:boy )" << endl;
-        cout << "    birth : " << ((p->next)->stu).getyear() << "-" << ((p->next)->stu).getmonth() << "-" << ((p->next)->stu).getday() << endl;
-        cout << "institute : " << ((p->next)->stu).getinstitute() << endl;
-        cout << "    major : " << ((p->next)->stu).getmajor() << endl;
-        cout << "    grade : " << ((p->next)->stu).getgrade() << endl;
-        cout << "    class : " << ((p->next)->stu).getclas() << endl;
+        cout << "     name : " << (p->next->stu).getname() << endl;
+        cout << "   number : " << (p->next->stu).getnum() << endl;
         cout << endl;
 
         p = p->next;
     }
+    cout << endl;
 }
 
 void Print_stuall_Only_Num(stunode head)
@@ -290,35 +310,31 @@ stunode Find_from_Num_of_Student(stunode head, string num_to_be_find)
 
 void Save_Student_information(stunode head)
 {
-    ofstream fp("student.txt");
+    ofstream fp;
+    fp.open("student.txt", std::ios::app);
     if (fp.is_open())
     {
-        stunode p = head;
-        while (p->next != NULL)
+        fp << "     name :" << (head->stu).getname() << endl;
+        fp << "   number :" << (head->stu).getnum() << endl;
+        fp << "   gender :" << (head->stu).getgender() << endl;
+        fp << "    birth :" << (head->stu).getyear() << "-" << (head->stu).getmonth() << "-" << (head->stu).getday() << endl;
+        fp << "institute :" << (head->stu).getinstitute() << endl;
+        fp << "    major :" << (head->stu).getmajor() << endl;
+        fp << "    grade :" << (head->stu).getgrade() << endl;
+        fp << "    class :" << (head->stu).getclas() << endl;
+
+        /* 打印某学生所选学科 */
+        fp << " subjects :";
+        subnode p1 = head->stu.getsub();
+        while (p1->next != NULL)
         {
-            fp << "     name :" << ((p->next)->stu).getname() << endl;
-            fp << "   number :" << ((p->next)->stu).getnum() << endl;
-            fp << "   gender :" << ((p->next)->stu).getgender() << endl;
-            fp << "    birth :" << ((p->next)->stu).getyear() << "-" << ((p->next)->stu).getmonth() << "-" << ((p->next)->stu).getday() << endl;
-            fp << "institute :" << ((p->next)->stu).getinstitute() << endl;
-            fp << "    major :" << ((p->next)->stu).getmajor() << endl;
-            fp << "    grade :" << ((p->next)->stu).getgrade() << endl;
-            fp << "    class :" << ((p->next)->stu).getclas() << endl;
-
-            /* 打印某学生所选学科 */
-            fp << " subjects :";
-            subnode p1 = p->next->stu.getsub();
-            while (p1->next != NULL)
-            {
-                fp << (suball[(p1->next)->subject]).getnum() << " ";
-                p1 = p1->next;
-            }
-            fp << endl;
-
-            fp << endl;
-
-            p = p->next;
+            fp << (suball[(p1->next)->subject]).getnum() << " ";
+            p1 = p1->next;
         }
+        fp << endl;
+
+        /* 最后多输出一个 '\n' */
+        fp << endl;
 
         fp.close();
     }

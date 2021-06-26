@@ -65,6 +65,11 @@ void Insert_Hash(stunode head, string stunum, result *hashtable)
         hashtable->status[Pos] = Legitimate;
         hashtable->htable[Pos]->studentnumber = stunum;
     }
+    else
+    {
+        cout << "Score of this student has been recorded." << endl;
+        return;
+    }
 
     examnode temp_examnode = hashtable->htable[Pos];
     subnode p = (temp_student->stu).getsub();
@@ -81,13 +86,14 @@ void Insert_Hash(stunode head, string stunum, result *hashtable)
         temp_examnode = temp_examnode->next;
     }
     temp_examnode->next = NULL;
+    cout << "Job done." << endl;
 }
 
 void Get_Score(int key, result *hashtable)
 {
     if (hashtable->status[key] != Legitimate)
     {
-        cout << "Can not find this student" << endl;
+        cout << "Score of this student has not recorded yet." << endl;
         return;
     }
 
@@ -96,7 +102,7 @@ void Get_Score(int key, result *hashtable)
     while (tempexamnode->next != NULL)
     {
         //suball[std::stoi(tempexamnode->next->next->subject)].getname()
-        cout << tempexamnode->next->subject << " : " << tempexamnode->next->score << endl;
+        cout << Find_Subnum_From_Sunname(tempexamnode->next->subject) << " : " << tempexamnode->next->score << endl;
         tempexamnode = tempexamnode->next;
     }
 }
